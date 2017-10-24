@@ -1,0 +1,23 @@
+{
+  "name": "bamazon-cli",
+  "version": "1.0.0",
+  "description": "Amazon-like storefront created with Node JS and MySQL",
+  "main": "bama.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frannypax/bamazon-cli.git"
+  },
+  "author": "francis asirifi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frannypax/bamazon-cli/issues"
+  },
+  "homepage": "https://github.com/frannypax/bamazon-cli#readme",
+  "dependencies": {
+    "console.table": "^0.9.1",
+    "mysql": "^2.15.0"
+  }
+}
