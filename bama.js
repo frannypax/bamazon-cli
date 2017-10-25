@@ -16,7 +16,7 @@ connection.connect(function(err){
 	nowConnectedToProducts();
 });
 function nowConnectedToProducts(){
-		connection.query("select * from products", function(err, response){
+		connection.query("select `item_id` `id`, `product_name` `Product`, `department_name` `Department`, `price` `Price($)`, `stock_quantity` `Quantity` from products", function(err, response){
 		if(err){
 			throw err;
 		}
