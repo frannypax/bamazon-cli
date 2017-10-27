@@ -18,6 +18,7 @@
   "homepage": "https://github.com/frannypax/bamazon-cli#readme",
   "dependencies": {
     "console.table": "^0.9.1",
+    "inquirer": "^3.3.0",
     "mysql": "^2.15.0",
     "prompt": "^1.0.0"
   }
