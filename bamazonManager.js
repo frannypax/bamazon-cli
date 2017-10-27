@@ -164,9 +164,6 @@ function addInventory() {
 		connection.query(queryString, {item_id: item}, function(err, data) {
 			if (err) throw err;
 
-			// If the user has selected an invalid item ID, data attay will be empty
-			// console.log('data = ' + JSON.stringify(data));
-
 			if (data.length === 0) {
 				console.log('ERROR: Invalid Item ID. Please select a valid Item ID.');
 				addInventory();
@@ -178,7 +175,7 @@ function addInventory() {
 
 				// Constructing the updating query string
 				var updateQueryString = 'UPDATE products SET stock_quantity = ' + (productData.stock_quantity + addQuantity) + ' WHERE item_id = ' + item;
-				// console.log('updateQueryStr = ' + updateQueryStr);
+				// console.log('updateQueryString = ' + updateQueryString);
 
 				// Update the inventory
 				connection.query(updateQueryString, function(err, data) {
@@ -226,9 +223,9 @@ function createNewProduct() {
 		// console.log('input: ' + JSON.stringify(input));
 
 		console.log('Adding New Item: \n    product_name = ' + input.product_name + '\n' +  
-									   '    department_name = ' + input.department_name + '\n' +  
-									   '    price = ' + input.price + '\n' +  
-									   '    stock_quantity = ' + input.stock_quantity);
+			'    department_name = ' + input.department_name + '\n' +  
+			'    price = ' + input.price + '\n' +  
+			'    stock_quantity = ' + input.stock_quantity);
 
 		// Create the insertion query string
 		var queryString = 'INSERT INTO products SET ?';
@@ -237,7 +234,7 @@ function createNewProduct() {
 		connection.query(queryString, input, function (error, results, fields) {
 			if (error) throw error;
 
-			console.log('New product has been added to the inventory under Item ID ' + results.insertId + '.');
+			console.log('New product added ! ' + results.insertId + '.');
 			console.log("\n---------------------------------------------------------------------\n");
 
 			// End the database connection
