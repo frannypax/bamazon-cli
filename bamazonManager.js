@@ -234,12 +234,23 @@ function createNewProduct() {
 		connection.query(queryString, input, function (error, results, fields) {
 			if (error) throw error;
 
-			console.log('New product added ! ' + results.insertId + '.');
+			console.log('New product added !...');
 			console.log("\n---------------------------------------------------------------------\n");
+			displayInventory();
+			//connection.end();
 
-			// End the database connection
-			connection.end();
+			
 		});
+		// var queryString2 = 'SELECT * FROM products WHERE ?';
+		// connection.query(queryString2, input.product_name, function(err, response) {
+		// 	if (err) throw err;
+
+		// 	console.table(response);
+		// 	console.log(response);
+
+		// 	// End the database connection
+		// 	connection.end();
+		// })
 	})
 }
 
